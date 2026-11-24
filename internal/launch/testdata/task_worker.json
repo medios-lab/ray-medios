@@ -1,0 +1,116 @@
+{
+ "command": {
+  "environment": {
+   "variables": [
+    {
+     "name": "RAY_CLOUD_INSTANCE_ID",
+     "value": "c1-small-bbbbbb"
+    },
+    {
+     "name": "RAY_NODE_TYPE_NAME",
+     "value": "small"
+    },
+    {
+     "name": "RAY_AUTH_MODE",
+     "value": "token"
+    },
+    {
+     "name": "RAY_AUTH_TOKEN",
+     "value": "tok"
+    }
+   ]
+  },
+  "shell": true,
+  "value": "set -e\nuntil ray health-check --address node-a:31000 > /dev/null 2>&1; do sleep 5; done\nexec ray start --block --node-ip-address=node-a --node-manager-port=31000 --object-manager-port=31001 --runtime-env-agent-port=31002 --metrics-export-port=31003 --dashboard-agent-listen-port=31004 --dashboard-agent-grpc-port=31005 --worker-port-list=31006,31007,31008,31009 --num-cpus=2 --num-gpus=1 --memory=4294967296 --object-store-memory=1287651328 --address=node-a:31000"
+ },
+ "container": {
+  "medios": {
+   "image": {
+    "docker": {
+     "name": "img@sha256:0"
+    },
+    "type": "DOCKER"
+   }
+  },
+  "type": "MEDIOS"
+ },
+ "name": "c1-small-bbbbbb",
+ "node_id": {
+  "value": "n1"
+ },
+ "principal": "run:c1",
+ "resources": [
+  {
+   "name": "cpus",
+   "scalar": {
+    "value": 2.0
+   },
+   "type": "SCALAR"
+  },
+  {
+   "name": "mem",
+   "scalar": {
+    "value": 4096.0
+   },
+   "type": "SCALAR"
+  },
+  {
+   "name": "gpus",
+   "scalar": {
+    "value": 1.0
+   },
+   "type": "SCALAR"
+  },
+  {
+   "name": "ports",
+   "ranges": {
+    "range": [
+     {
+      "begin": 31000,
+      "end": 31000
+     },
+     {
+      "begin": 31001,
+      "end": 31001
+     },
+     {
+      "begin": 31002,
+      "end": 31002
+     },
+     {
+      "begin": 31003,
+      "end": 31003
+     },
+     {
+      "begin": 31004,
+      "end": 31004
+     },
+     {
+      "begin": 31005,
+      "end": 31005
+     },
+     {
+      "begin": 31006,
+      "end": 31006
+     },
+     {
+      "begin": 31007,
+      "end": 31007
+     },
+     {
+      "begin": 31008,
+      "end": 31008
+     },
+     {
+      "begin": 31009,
+      "end": 31009
+     }
+    ]
+   },
+   "type": "RANGES"
+  }
+ ],
+ "task_id": {
+  "value": "c1-small-bbbbbb"
+ }
+}

@@ -1,0 +1,34 @@
+[project]
+name = "xgboost-covtype"
+version = "0"
+description = "Python environment shared by the Ray nodes' image and the notebook kernel"
+requires-python = "==3.12.*"
+# Ray is a release that publishes both a Linux aarch64 and a macOS arm64
+# wheel, so the kernel and the Ray nodes run the same build. The other pins
+# are those of Anyscale's 04b_tabular_workload_pattern notebook, except
+# pyarrow: the notebook pins 14.0.2 and Ray 2.60.0 requires 17.0.0 or later,
+# so the lock file chooses it.
+dependencies = [
+    "ray[default,train,data]==2.60.0",
+    "xgboost==3.0.5",
+    "scikit-learn==1.7.2",
+    "pyarrow",
+    "matplotlib==3.10.6",
+    "seaborn==0.13.2",
+    "pandas",
+]
+
+[dependency-groups]
+# Only the kernel's machine needs these.
+kernel = [
+    "ipykernel",
+    "ipywidgets>=8.1.9",
+    "jupyterlab",
+]
+
+[tool.uv]
+package = false
+environments = [
+    "sys_platform == 'linux' and platform_machine == 'aarch64'",
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+]

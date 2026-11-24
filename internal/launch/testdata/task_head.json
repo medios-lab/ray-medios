@@ -1,0 +1,137 @@
+{
+ "command": {
+  "environment": {
+   "variables": [
+    {
+     "name": "RAY_CLOUD_INSTANCE_ID",
+     "value": "c1-headgroup-aaaaaa"
+    },
+    {
+     "name": "RAY_NODE_TYPE_NAME",
+     "value": "headgroup"
+    },
+    {
+     "name": "RAY_AUTH_MODE",
+     "value": "token"
+    },
+    {
+     "name": "RAY_AUTH_TOKEN",
+     "value": "tok"
+    },
+    {
+     "name": "DASHBOARD_METRIC_PORT",
+     "value": "31002"
+    },
+    {
+     "name": "AUTOSCALER_METRIC_PORT",
+     "value": "31004"
+    }
+   ]
+  },
+  "shell": true,
+  "value": "ray start --block --node-ip-address=node-a --node-manager-port=31005 --object-manager-port=31006 --runtime-env-agent-port=31007 --metrics-export-port=31008 --dashboard-agent-listen-port=31009 --dashboard-agent-grpc-port=31010 --worker-port-list=31011,31012,31013,31014 --num-cpus=1 --num-gpus=0 --memory=2147483648 --object-store-memory=643825664 --head --port=31000 --ray-client-server-port=31001 --include-dashboard=true --dashboard-host=0.0.0.0 --dashboard-port=31003"
+ },
+ "container": {
+  "medios": {
+   "image": {
+    "docker": {
+     "name": "img@sha256:0"
+    },
+    "type": "DOCKER"
+   }
+  },
+  "type": "MEDIOS"
+ },
+ "name": "c1-headgroup-aaaaaa",
+ "node_id": {
+  "value": "n1"
+ },
+ "principal": "run:c1",
+ "resources": [
+  {
+   "name": "cpus",
+   "scalar": {
+    "value": 1.0
+   },
+   "type": "SCALAR"
+  },
+  {
+   "name": "mem",
+   "scalar": {
+    "value": 2048.0
+   },
+   "type": "SCALAR"
+  },
+  {
+   "name": "ports",
+   "ranges": {
+    "range": [
+     {
+      "begin": 31000,
+      "end": 31000
+     },
+     {
+      "begin": 31001,
+      "end": 31001
+     },
+     {
+      "begin": 31002,
+      "end": 31002
+     },
+     {
+      "begin": 31003,
+      "end": 31003
+     },
+     {
+      "begin": 31004,
+      "end": 31004
+     },
+     {
+      "begin": 31005,
+      "end": 31005
+     },
+     {
+      "begin": 31006,
+      "end": 31006
+     },
+     {
+      "begin": 31007,
+      "end": 31007
+     },
+     {
+      "begin": 31008,
+      "end": 31008
+     },
+     {
+      "begin": 31009,
+      "end": 31009
+     },
+     {
+      "begin": 31010,
+      "end": 31010
+     },
+     {
+      "begin": 31011,
+      "end": 31011
+     },
+     {
+      "begin": 31012,
+      "end": 31012
+     },
+     {
+      "begin": 31013,
+      "end": 31013
+     },
+     {
+      "begin": 31014,
+      "end": 31014
+     }
+    ]
+   },
+   "type": "RANGES"
+  }
+ ],
+ "task_id": {
+  "value": "c1-headgroup-aaaaaa"
+ }
+}

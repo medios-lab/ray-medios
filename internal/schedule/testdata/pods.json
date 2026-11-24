@@ -1,0 +1,69 @@
+[
+ {
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+   "labels": {
+    "ray.io/cluster": "c1",
+    "ray.io/group": "headgroup",
+    "ray.io/node-type": "head"
+   },
+   "name": "c1-headgroup-aaaaaa",
+   "namespace": "ns"
+  },
+  "status": {
+   "containerStatuses": [
+    {
+     "state": {
+      "running": {}
+     }
+    }
+   ]
+  }
+ },
+ {
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+   "labels": {
+    "ray.io/cluster": "c1",
+    "ray.io/group": "small",
+    "ray.io/node-type": "worker"
+   },
+   "name": "c1-small-cccccc",
+   "namespace": "ns"
+  },
+  "status": {
+   "containerStatuses": [
+    {
+     "state": {
+      "waiting": {}
+     }
+    }
+   ]
+  }
+ },
+ {
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+   "deletionTimestamp": "2026-11-17T19:00:00Z",
+   "labels": {
+    "ray.io/cluster": "c1",
+    "ray.io/group": "small",
+    "ray.io/node-type": "worker"
+   },
+   "name": "c1-small-bbbbbb",
+   "namespace": "ns"
+  },
+  "status": {
+   "containerStatuses": [
+    {
+     "state": {
+      "running": {}
+     }
+    }
+   ]
+  }
+ }
+]

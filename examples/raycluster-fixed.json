@@ -1,0 +1,60 @@
+{
+  "apiVersion": "ray.io/v1",
+  "kind": "RayCluster",
+  "metadata": {
+    "name": "ray-example",
+    "namespace": "default"
+  },
+  "spec": {
+    "headGroupSpec": {
+      "rayStartParams": {},
+      "template": {
+        "spec": {
+          "containers": [
+            {
+              "name": "ray-head",
+              "resources": {
+                "limits": {
+                  "cpu": "2",
+                  "memory": "4Gi"
+                },
+                "requests": {
+                  "cpu": "2",
+                  "memory": "4Gi"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "workerGroupSpecs": [
+      {
+        "groupName": "workers",
+        "replicas": 1,
+        "minReplicas": 1,
+        "maxReplicas": 1,
+        "rayStartParams": {},
+        "template": {
+          "spec": {
+            "containers": [
+              {
+                "name": "ray-worker",
+                "resources": {
+                  "limits": {
+                    "cpu": "4",
+                    "memory": "8Gi"
+                  },
+                  "requests": {
+                    "cpu": "4",
+                    "memory": "8Gi"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

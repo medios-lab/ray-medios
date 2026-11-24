@@ -1,0 +1,4 @@
+github.com/evanphx/json-patch/v5 v5.9.11 h1:/8HVnzMq13/3x9TPvjG08wUGqBTmZBsCWzjTM0wiaDU=
+github.com/evanphx/json-patch/v5 v5.9.11/go.mod h1:3j+LviiESTElxA4p3EMKAB9HXj3/XEtnUf6OZxqIQTM=
+github.com/medios-lab/medios-sdk-go v0.0.0-20261124143125-e5d0de0d01fb h1:urQX8A6RfrIFXOz0h6f91yuaTAKLcV+x4IzkUQAfYtQ=
+github.com/medios-lab/medios-sdk-go v0.0.0-20261124143125-e5d0de0d01fb/go.mod h1:Ds0um11hIyGcMa8tFiD64C5VqmOOr/WUEzyn6oY5fUQ=
